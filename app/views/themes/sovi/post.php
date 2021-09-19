@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 
 <!-- left content -->
 <div class="col-lg-8 col-md-12 clearfix mb-5 left-content">
@@ -6,16 +6,17 @@
 		<!-- post tags -->
 		<div class="tagcloud clearfix mb-1">
 			<?php
-				$tags = explode(',', $result_post['tag']);
-				if ( ! empty($result_post['tag']) && $tags > 0) {
-					foreach ($tags as $tag) {
-						$tag = seotitle($tag, NULL);
-						$resTag = $this->CI->db->where('seotitle', $tag)->get('t_tag')->row_array();
-						if ( $tag == $resTag['seotitle'] )
-							echo '<a href="'.site_url('tag/'.$tag).'" rel="tag">'.$resTag['title'].'</a>';
-					}
-				}
-			?>
+                $tags = explode(',', $result_post['tag']);
+                if (! empty($result_post['tag']) && $tags > 0) {
+                    foreach ($tags as $tag) {
+                        $tag = seotitle($tag, null);
+                        $resTag = $this->CI->db->where('seotitle', $tag)->get('t_tag')->row_array();
+                        if ($tag == $resTag['seotitle']) {
+                            echo '<a href="'.site_url('tag/'.$tag).'" rel="tag">'.$resTag['title'].'</a>';
+                        }
+                    }
+                }
+            ?>
 		</div>
 		<!--/ post tags -->
 
@@ -35,7 +36,7 @@
 		<!--/ post meta -->
 
 		<!-- post image -->
-		<?php if ( post_images($result_post['picture']) ):?>
+		<?php if (post_images($result_post['picture'])):?>
 		<div class="entry-image">
 			<img src="<?=post_images($result_post['picture']);?>" alt="<?=$result_post['image_caption'];?>"/>
 			<!-- image description -->
@@ -87,11 +88,11 @@
 			<div class="row">
 				<div class="col-sm-6 text-left">
 					<a href="<?=$prev_post['url']?>" title="Previous Post" class="btn btn-light">&lArr; Previous</a>
-					<div class="post-np-title"><small><a href="<?=$prev_post['url']?>" title="<?=$prev_post['title']?>" class="text-dark"><?=cut($prev_post['title'],100)?>...</a></small></div>
+					<div class="post-np-title"><small><a href="<?=$prev_post['url']?>" title="<?=$prev_post['title']?>" class="text-dark"><?=cut($prev_post['title'], 100)?>...</a></small></div>
 				</div>
 				<div class="col-sm-6 text-right">
 					<a href="<?=$next_post['url']?>" title="Next Post" class="btn btn-light">Next &rArr;</a>
-					<div class="post-np-title"><small><a href="<?=$next_post['url']?>" title="<?=$next_post['title']?>" class="text-dark"><?=cut($next_post['title'],100)?>...</a></small></div>
+					<div class="post-np-title"><small><a href="<?=$next_post['url']?>" title="<?=$next_post['title']?>" class="text-dark"><?=cut($next_post['title'], 100)?>...</a></small></div>
 				</div>
 			</div>
 		</div>
@@ -107,9 +108,9 @@
 		<div class="related-posts clearfix">
 			<ul>
 			<?php
-				$related_posts = $this->CI->post_model->related_post($result_post['tag'], $result_post['post_id'], 4);
-				foreach ($related_posts as $res_relatedpost):
-			?>
+                $related_posts = $this->CI->post_model->related_post($result_post['tag'], $result_post['post_id'], 4);
+                foreach ($related_posts as $res_relatedpost):
+            ?>
 				<li><a href="<?=post_url($res_relatedpost['seotitle']);?>" title="<?=$res_relatedpost['title'];?>"><?=$res_relatedpost['title'];?></a></li>
 			<?php endforeach ?>
 			</ul>
@@ -117,7 +118,7 @@
 	</div>
 	<!--/ related posts -->
 
-	<?php if ( get_setting('post_comment')=='Y' && $result_post['post_comment']=='Y' ): ?>
+	<?php if (get_setting('post_comment')=='Y' && $result_post['post_comment']=='Y'): ?>
 	<!-- comments list -->
 	<div id="comments" class="post-head">
 		<h4>Comments (<?=$result_post['comment'];?>)</h4>
@@ -126,72 +127,72 @@
 		<div class="entry-comment clearfix">
 			<div class="list-comment clearfix ">
 				<?php
-					$data_comments = $this->CI->db
-						->where('id_post', $result_post['post_id'])
-						->where('active != "N"')
-						->where('parent = "0"', NULL, FALSE)
-						->get('t_comment');
+                    $data_comments = $this->CI->db
+                        ->where('id_post', $result_post['post_id'])
+                        ->where('active != "N"')
+                        ->where('parent = "0"', null, false)
+                        ->get('t_comment');
 
-					foreach ($data_comments->result_array() as $comment):
-						$usersa = $this->CI->db
-							->select('id,photo')
-							->where('id', $comment['id_user'])
-							->get('t_user')
-							->row_array();
-				?>
+                    foreach ($data_comments->result_array() as $comment):
+                        $usersa = $this->CI->db
+                            ->select('id,photo')
+                            ->where('id', $comment['id_user'])
+                            ->get('t_user')
+                            ->row_array();
+                ?>
 				<div class="media mt-2">
 					<img src="<?=user_photo($usersa['photo']);?>" class="mr-3" width="45">
 					<div class="media-body">
 						<h5 class="comment-name mt-0">
 							<?=$comment['name'];?> 
-							<small class="text-muted ml-3"><?=ci_date($comment['date'],'d M Y | h:i A');?></small>
+							<small class="text-muted ml-3"><?=ci_date($comment['date'], 'd M Y | h:i A');?></small>
 						</h5>
 						<div class="comment-body mb-5">
-							<?php 
-								if ($comment['active'] == 'X') {
-									echo '<i class="text-danger">****</i>';
-								} else {
-									echo '<p>'.auto_link($comment['comment']).'</p>';
-										echo '<a href="#form-comment" class="reply_comment" data-parent="'.encrypt($comment['id']).'">Reply</a>';
-								}
-							?>
+							<?php
+                                if ($comment['active'] == 'X') {
+                                    echo '<i class="text-danger">****</i>';
+                                } else {
+                                    echo '<p>'.auto_link($comment['comment']).'</p>';
+                                    echo '<a href="#form-comment" class="reply_comment" data-parent="'.encrypt($comment['id']).'">Reply</a>';
+                                }
+                            ?>
 						</div>
 						
 
 						<!-- child -->
 						<?php
-							if ($comment['active'] != 'X'):
-								
-								$child_comments = $this->CI->db
-									->where('parent', $comment['id'])
-									->where('active != "N"')
-									->get('t_comment');
+                            if ($comment['active'] != 'X'):
+                                
+                                $child_comments = $this->CI->db
+                                    ->where('parent', $comment['id'])
+                                    ->where('active != "N"')
+                                    ->get('t_comment');
 
-								foreach ($child_comments->result_array() as $res_child):
-									$users_rep = $this->CI->db
-										->select('id,photo')
-										->where('id', $res_child['id_user'])
-										->where('active', 'Y')
-										->get('t_user')
-										->row_array();
-						?>
+                                foreach ($child_comments->result_array() as $res_child):
+                                    $users_rep = $this->CI->db
+                                        ->select('id,photo')
+                                        ->where('id', $res_child['id_user'])
+                                        ->where('active', 'Y')
+                                        ->get('t_user')
+                                        ->row_array();
+                        ?>
 						
 						<div class="media mt-4 mb-5">
 							<img src="<?=user_photo($users_rep['photo']);?>" class="mr-3" width="45">
 							<div class="media-body">
 								<h5 class="comment-name mt-0">
 									<?=$res_child['name'];?> 
-									<small class="text-muted ml-3"><?=ci_date($res_child['date'],'d M Y | h:i A');?></small>
+									<small class="text-muted ml-3"><?=ci_date($res_child['date'], 'd M Y | h:i A');?></small>
 								</h5>
 								<div class="comment-body">
-									<?php 
-										if ($res_child['active'] == 'X') {
-											echo '<i class="text-danger">****</i>';
-										} else {
-											echo '<p>'.auto_link($res_child['comment']).'</p>';
-											echo '<a href="#form-comment" class="reply_comment" data-parent="'.encrypt($comment['id']).'">Reply</a>';
-										}
-									?>
+									<?php
+                                        if ($res_child['active'] == 'X') {
+                                            echo '<i class="text-danger">****</i>';
+                                        } else {
+                                            echo '<p>'.auto_link($res_child['comment']).'</p>';
+                                            echo '<a href="#form-comment" class="reply_comment" data-parent="'.encrypt($comment['id']).'">Reply</a>';
+                                        }
+                                    ?>
 								</div>
 							</div>
 						</div>
@@ -213,9 +214,9 @@
 	<div class="post-inner">
 		<div class="form-comment">
 			<?php
-				$this->cifire_alert->show('alert_comment');
-				echo form_open(selft_url().'#form-comment','class="clearfix"');
-			?>
+                $this->cifire_alert->show('alert_comment');
+                echo form_open(selft_url().'#form-comment', 'class="clearfix"');
+            ?>
 			<input type="hidden" name="parent" class="input_parent"/>
 			<div class="row">
 				<div class="col-md-6">

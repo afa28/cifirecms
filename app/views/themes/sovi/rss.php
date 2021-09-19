@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="col-sm-12 clearfix mb-5 left-content">
 	<div class="box-pages">
 		<div class="post-head">

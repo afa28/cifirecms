@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner">
 	<div class="card compogen mg-b-100 mg-t-20">
 		<div class="card-header tx-center cogen-title">

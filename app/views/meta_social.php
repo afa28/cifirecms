@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 
 <meta property="business:contact_data:street_address" content="STREET_ADDRESS"/>
 <meta property="business:contact_data:locality" content="CITY_NAME"/>

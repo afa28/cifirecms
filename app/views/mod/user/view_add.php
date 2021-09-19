@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -19,7 +19,7 @@
 	</div>
 
 	<div class="card mg-b-50">
-		<?=form_open_multipart('','id="form_add_user" autocomplete="off"');?>
+		<?=form_open_multipart('', 'id="form_add_user" autocomplete="off"');?>
 		<div class="card-body">
 			<div class="row">
 				<!-- Group -->
@@ -27,13 +27,13 @@
 					<div class="form-group">
 						<label><?=lang_line('_group');?> <span class="text-danger">*</span></label>
 						<select class="select2" name="group"  data-placeholder="Group">
-							<?php 
-								echo '<option value=""></option>';
-								$groups = $this->CI->user_model->data_groups();
-								foreach ($groups as $resGroup) {
-									echo '<option value="'. $resGroup['pk'] .'">'. $resGroup['title'] .'</option>';
-								}
-							?>
+							<?php
+                                echo '<option value=""></option>';
+                                $groups = $this->CI->user_model->data_groups();
+                                foreach ($groups as $resGroup) {
+                                    echo '<option value="'. $resGroup['pk'] .'">'. $resGroup['title'] .'</option>';
+                                }
+                            ?>
 						</select>
 					</div>
 				</div>

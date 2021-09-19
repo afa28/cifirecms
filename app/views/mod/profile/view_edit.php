@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -19,7 +19,7 @@
 	</div>
 	
 	<div class="content">
-		<?=form_open_multipart('','id="form_update" autocomplete="off"');?>
+		<?=form_open_multipart('', 'id="form_update" autocomplete="off"');?>
 		<div class="content-inner">
 
 			<div class="row">
@@ -75,7 +75,7 @@
 					<div class="form-group mg-b-25">
 						<label><?=lang_line('_gender');?></label>
 						<select class="select-bs" name="gender">
-							<option value="<?=$this->data['user_gender'];?>" style="display:none;"><?=($this->data['user_gender'] == 'M' ? lang_line('ui_male') : lang_line('ui_female') );?></option>
+							<option value="<?=$this->data['user_gender'];?>" style="display:none;"><?=($this->data['user_gender'] == 'M' ? lang_line('ui_male') : lang_line('ui_female'));?></option>
 							<option value="M"><?=lang_line('ui_male');?></option>
 							<option value="F"><?=lang_line('ui_female');?></option>
 						</select>

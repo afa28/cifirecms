@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -33,20 +33,20 @@
 						<button type="button" class="btn btn-sm btn-white nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-file-text-o mr-2"></i><?=$file_layout.".php";?></button>
 						<div class="dropdown-menu dropdown-menu-left">
 							<?php
-								$fileLayout = VIEWPATH.'themes/'.$res_theme['folder']."/$file_layout.php";
+                                $fileLayout = VIEWPATH.'themes/'.$res_theme['folder']."/$file_layout.php";
 
-								$data = read_file($fileLayout);
-								$data = str_replace("textarea", "textarea_CI", $data);
-								$theme_files = get_filenames(VIEWPATH.'themes/'.$res_theme['folder']);
+                                $data = read_file($fileLayout);
+                                $data = str_replace("textarea", "textarea_CI", $data);
+                                $theme_files = get_filenames(VIEWPATH.'themes/'.$res_theme['folder']);
 
-								foreach ($theme_files as $value) {
-									$ekstensi = pathinfo($value, PATHINFO_EXTENSION);
-									$filename = pathinfo($value, PATHINFO_FILENAME);
-									if ($ekstensi === 'php') {
-										echo '<a class="dropdown-item" href="'.admin_url($this->mod.'/edit/'.$res_theme['id'].'/'.$filename).'">'.$value.'</a>';
-									}
-								}
-							?>
+                                foreach ($theme_files as $value) {
+                                    $ekstensi = pathinfo($value, PATHINFO_EXTENSION);
+                                    $filename = pathinfo($value, PATHINFO_FILENAME);
+                                    if ($ekstensi === 'php') {
+                                        echo '<a class="dropdown-item" href="'.admin_url($this->mod.'/edit/'.$res_theme['id'].'/'.$filename).'">'.$value.'</a>';
+                                    }
+                                }
+                            ?>
 						</div>
 					</li>
 				</ul>
@@ -57,10 +57,10 @@
 		<div class="card-body">
 			<div class="row">
 				<div class="col-md-12">
-					<?php 
-						echo form_open('','autocomplete="off"'); 
-						echo form_hidden('act','edit');
-					?>
+					<?php
+                        echo form_open('', 'autocomplete="off"');
+                        echo form_hidden('act', 'edit');
+                    ?>
 					<div class="box-body">
 						<style type="text/css">.CodeMirror{height:400px;font-family:consolas;}.CodeMirror.CodeMirror-fullscreen{z-index:1060;height: 100% !important;}</style>
 						<textarea id="AreaCodemirrors" name="code_content" class="form-control mt-0"><?=$data;?></textarea>
@@ -79,10 +79,10 @@
 <div id="modal_create_file" class="modal fadeX" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<?php 
-				echo form_open('','autocomplete="off"');
-				echo form_hidden('act','create_file');
-			?>
+			<?php
+                echo form_open('', 'autocomplete="off"');
+                echo form_hidden('act', 'create_file');
+            ?>
 			<div class="modal-header">
 				<h5 class="modal-title"><i class="icon-file-plus mr-2"></i>Create File</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

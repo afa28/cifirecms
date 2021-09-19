@@ -22,7 +22,7 @@
         <link><?=post_url($res['post_seotitle']);?></link>
         <guid><?=post_url($res['post_seotitle']);?></guid>
         <description><![CDATA[ <?=html_entity_decode($res['post_content']); ?> ]]></description>
-        <enclosure url="<?=post_images($res['post_picture'],'',true);?>" length="49398" type="image/jpeg"/>
+        <enclosure url="<?=post_images($res['post_picture'], '', true);?>" length="49398" type="image/jpeg"/>
         <pubDate><?php echo ci_date($res['datepost'].$res['timepost'], 'D d F Y | h:i A') ?></pubDate>
         <dc:creator><?=$res['user_name'];?></dc:creator>
     </item>

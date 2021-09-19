@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') or exit('No direct script access allowed');?>
 <div class="auth-container mg-t-50">
 	<div class="text-center mg-b-30">
 		<img class="img-fluid wd-50 rounded-circle mg-b-20" src="<?=content_url('images/logo.png');?>" alt="logo">

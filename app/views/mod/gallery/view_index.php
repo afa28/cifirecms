@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -24,20 +24,22 @@
 
 	<div class="card">
 		<div class="card-body">
-			<?php if (!$albums) echo "<p class='text-center'>No data</p>"; ?>
+			<?php if (!$albums) {
+    echo "<p class='text-center'>No data</p>";
+} ?>
 			<div class="row" style="margin-top:-15px;">
-				<?php 
-					foreach ($albums as $res_album):
-						$res = $this->db
-							->select('picture')
-							->where('id_album', $res_album['id'])
-							->limit(1)
-							->order_by('id', 'DESC')
-							->get('t_gallery')
-							->row_array();
+				<?php
+                    foreach ($albums as $res_album):
+                        $res = $this->db
+                            ->select('picture')
+                            ->where('id_album', $res_album['id'])
+                            ->limit(1)
+                            ->order_by('id', 'DESC')
+                            ->get('t_gallery')
+                            ->row_array();
 
-						$photosrc = post_images($res['picture'],'thumb',TRUE);
-				?>
+                        $photosrc = post_images($res['picture'], 'thumb', true);
+                ?>
 				<div id="gallery-item<?=$res_album['id'];?>" class="col-sm-6 col-md-4 col-lg-3 mt-3 gbhs">
 					<div class="card">
 						<div class="pd-6 text-center">
@@ -48,7 +50,7 @@
 							</div>
 							<div class="theme-img-card mb-2">
 								<a href="<?=admin_url($this->mod.'/album/?id='.urlencode(encrypt($res_album['id'])));?>" title="<?=$res_album['title'];?>">
-									<img src="<?=post_images(null,'thumb',TRUE);?>" data-src="<?=$photosrc;?>" class="lazy" style="width:100%;">
+									<img src="<?=post_images(null, 'thumb', true);?>" data-src="<?=$photosrc;?>" class="lazy" style="width:100%;">
 								</a>
 							</div>
 							<div><?=humanize($res_album['title']);?></div>
@@ -65,7 +67,7 @@
 <div id="modal_add_album" class="modal">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<?=form_open(selft_url(),'autocomplete="off"');?>
+			<?=form_open(selft_url(), 'autocomplete="off"');?>
 			<div class="modal-header">
 				<h5 class="modal-title"><?=lang_line('dialog_title_add_album');?></h5>
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -73,7 +75,7 @@
 			<div class="modal-body">
 				<div class="form-group">
 					<label><?=lang_line('_title_album');?> <small class="text-danger">*</small></label>
-					<input type="text" name="title" value="<?=ci_date(date('Y-m-d h:i:s'),'l, d M  Y, his')?>" class="form-control" required/>
+					<input type="text" name="title" value="<?=ci_date(date('Y-m-d h:i:s'), 'l, d M  Y, his')?>" class="form-control" required/>
 				</div>
 			</div>
 			<div class="modal-footer">

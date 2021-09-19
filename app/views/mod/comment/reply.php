@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -20,12 +20,12 @@
 	</div>
 	<?=$this->CI->cifire_alert->show($this->mod);?>
 	<div class="card">
-		<?php 
-			echo form_open();
-			echo form_hidden('act','reply');
-			$parent = $result['parent']!=0?$result['parent']:$result['id'];
-			echo form_hidden('parent', encrypt($parent));
-		?>
+		<?php
+            echo form_open();
+            echo form_hidden('act', 'reply');
+            $parent = $result['parent']!=0?$result['parent']:$result['id'];
+            echo form_hidden('parent', encrypt($parent));
+        ?>
 		<div class="card-body">
 			<div class="card pd-20 mg-b-20">
 				<div class="tx-medium"><?=$result['name'];?> - <?=$result['email'];?></div>

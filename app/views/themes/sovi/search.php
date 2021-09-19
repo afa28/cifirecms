@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="col-md-12 clearfix mb-5 left-content">
 	<div class="box-category">
 		<div class="post-head">
@@ -16,7 +16,7 @@
 					<div class="col-md-2">
 						<div class="image-warper">
 							<a href="<?=post_url($res['post_seotitle']);?>" title="<?=$res['post_title'];?>">
-								<img  src="<?=post_images($res['picture'],'medium',TRUE);?>" alt="<?=$res['post_title'];?>">
+								<img  src="<?=post_images($res['picture'], 'medium', true);?>" alt="<?=$res['post_title'];?>">
 							</a>
 						</div>
 					</div>
@@ -31,7 +31,7 @@
 								<li><i class="cificon licon-folder"></i> <a href="<?=site_url('category/'.$res['category_seotitle']);?>"><?=$res['category_title'];?></a></li>
 							</ul>
 							<!--/ meta -->
-							<p class="description"><?=cut($res['content'],200);?>...</p>
+							<p class="description"><?=cut($res['content'], 200);?>...</p>
 						</div>
 					</div>
 				</div>

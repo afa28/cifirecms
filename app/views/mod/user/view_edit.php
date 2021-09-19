@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -20,10 +20,10 @@
 
 	<div class="card mg-b-50">
 		<?php
-			echo form_open_multipart('', 'id="form_update_user" autocomplete="off"');
-			echo form_hidden('act', 'update');
-			echo form_hidden('pk', encrypt($res_user['u_id']));
-		?>
+            echo form_open_multipart('', 'id="form_update_user" autocomplete="off"');
+            echo form_hidden('act', 'update');
+            echo form_hidden('pk', encrypt($res_user['u_id']));
+        ?>
 		<div class="card-body">
 			<div class="row">
 				<!-- Group -->
@@ -32,13 +32,15 @@
 						<label><?=lang_line('_group');?> <span class="text-danger">*</span></label>
 						<select class="select2" name="group"  data-placeholder="group" required>
 							<option value="<?=$res_user['g_pk'];?>"><?=$res_user['g_title']?></option>
-							<?php 
-								$groups = $this->CI->user_model->data_groups();
-								foreach ($groups as $resGroup) {
-									if ($resGroup['pk']==$res_user['g_pk']) continue;
-									echo '<option value="'. $resGroup['pk'] .'">'. $resGroup['title'] .'</option>';
-								}
-							?>
+							<?php
+                                $groups = $this->CI->user_model->data_groups();
+                                foreach ($groups as $resGroup) {
+                                    if ($resGroup['pk']==$res_user['g_pk']) {
+                                        continue;
+                                    }
+                                    echo '<option value="'. $resGroup['pk'] .'">'. $resGroup['title'] .'</option>';
+                                }
+                            ?>
 						</select>
 					</div>
 				</div>

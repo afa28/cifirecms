@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner mg-b-90">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -20,10 +20,10 @@
 	</div>
 
 	<div class="card">
-		<?php 
-			echo form_open('','id="form_update" autocomplete="off" class="form-bordered"');
-			echo form_hidden('act', 'update');
-		?>
+		<?php
+            echo form_open('', 'id="form_update" autocomplete="off" class="form-bordered"');
+            echo form_hidden('act', 'update');
+        ?>
 		<div class="card-body">
 
 			<!-- title -->
@@ -55,11 +55,11 @@
 						<select class="select2" name="parent"  data-placeholder="<?=lang_line('_parent');?>">
 							<option value="0"><?=lang_line('_no_parent');?></option>
 							<?php
-								foreach ($parents as $res_parent) {
-									$selected = ( $res_parent['id'] == $res_category['id_parent'] ? 'selected': '' ); 
-									echo '<option value="'. encrypt($res_parent['id']) .'" '. $selected .'>'. $res_parent['title'] .'</option>';
-								}
-							?>
+                                foreach ($parents as $res_parent) {
+                                    $selected = ($res_parent['id'] == $res_category['id_parent'] ? 'selected': '');
+                                    echo '<option value="'. encrypt($res_parent['id']) .'" '. $selected .'>'. $res_parent['title'] .'</option>';
+                                }
+                            ?>
 						</select>
 					</div>
 					<!--/ parent -->

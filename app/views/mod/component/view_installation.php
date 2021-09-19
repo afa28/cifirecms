@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -24,10 +24,10 @@
 	</div>
 	
 	<div class="content">
-		<?php 
-			echo form_open_multipart();
-			echo form_hidden('act', 1);
-		?>
+		<?php
+            echo form_open_multipart();
+            echo form_hidden('act', 1);
+        ?>
 		<div class="content-inner">
 			<div class="card bd pd-20 mg-b-10sX mg-b-30">
 				<label class="tx-sans tx-10 tx-medium tx-spacing-1 tx-uppercase tx-color-03 mg-b-10"><?=lang_line('_instructions');?></label>

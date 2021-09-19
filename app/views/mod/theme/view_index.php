@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -29,9 +29,9 @@
 		<div class="card-body">
 			<div class="row">
 				<?php
-					foreach ( $all_themes as $res ):
-						$img_preview = ( file_exists(CONTENTPATH.'/themes/'.$res['folder'].'/preview.jpg') ? content_url('themes/'.$res['folder'].'/preview.jpg') : content_url('images/noimage.jpg') );
-				?>
+                    foreach ($all_themes as $res):
+                        $img_preview = (file_exists(CONTENTPATH.'/themes/'.$res['folder'].'/preview.jpg') ? content_url('themes/'.$res['folder'].'/preview.jpg') : content_url('images/noimage.jpg'));
+                ?>
 				<div id="theme-item-<?=$res['id'];?>" class="col-lg-3">
 					<div class="card">
 						<div class="card-body text-center">
@@ -89,7 +89,7 @@
 <div id="modal_create_blank" class="modal fadeX" tabindex="-1" role="dialog">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<?=form_open('','autocomplete="off"');?>
+			<?=form_open('', 'autocomplete="off"');?>
 			<input type="hidden" name="act" value="blank_theme">
 			<div class="modal-header">
 				<h5 class="modal-title"><?=lang_line('dialog_title_create_blank'); ?></h5> 
@@ -113,15 +113,15 @@
 <div id="modal_active" class="modal fadeX" tabindex="-1" role="dialog">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<?php 
-				echo form_open('','autocomplete="off"');
-				echo form_hidden('act', 'active');
-				echo form_input(array(
-				                	'type' => 'hidden',
-				                	'name' => 'id',
-				                	'id'  => 'idActive',
-				                ));
-			?>
+			<?php
+                echo form_open('', 'autocomplete="off"');
+                echo form_hidden('act', 'active');
+                echo form_input(array(
+                                    'type' => 'hidden',
+                                    'name' => 'id',
+                                    'id'  => 'idActive',
+                                ));
+            ?>
 			<div class="modal-header">
 				<h5 class="modal-title"><?=lang_line('dialog_title_activate'); ?></h5>
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 

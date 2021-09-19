@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -38,12 +38,12 @@
 			<div class="card-body">
 				<div class="overflow-auto mw-100" style="min-height:190px;">
 					<?php
-						if ($res_mail['box']=='out') {
-							echo html_entity_decode($res_mail['message']);
-						}else {
-							echo $res_mail['message'];
-						}
-					?>
+                        if ($res_mail['box']=='out') {
+                            echo html_entity_decode($res_mail['message']);
+                        } else {
+                            echo $res_mail['message'];
+                        }
+                    ?>
 				</div>
 			</div>
 		</div>

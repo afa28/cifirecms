@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') or exit('No direct script access allowed');?>
 <div class="page-inner">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -28,13 +28,15 @@
 			<h6 class="lh-5 mg-b-0 text-uppercaseX"><i class="icon-images2 mr-2 tx-gray-600"></i> <?=$res_album['title'];?> </h6>
 		</div>
 		<div class="card-body">
-			<?php if (!$gallerys) echo "<p class='text-center'>No data</p>"; ?>
+			<?php if (!$gallerys) {
+    echo "<p class='text-center'>No data</p>";
+} ?>
 			<div class="row" style="margin-top:-15px;">
-				<?php 
-					foreach ($gallerys as $res):
-						$src_imgs = post_images($res['picture'], '', TRUE);
-						$thumb = post_images($res['picture'], 'thumb', TRUE);
-				?>
+				<?php
+                    foreach ($gallerys as $res):
+                        $src_imgs = post_images($res['picture'], '', true);
+                        $thumb = post_images($res['picture'], 'thumb', true);
+                ?>
 				<div id="gallery-item<?=$res['id'];?>" class="col-sm-6 col-md-4 col-lg-3 mt-3 gbhs">
 					<div class="card item-gal">
 						<div class="pd-6 text-center">
@@ -65,13 +67,13 @@
 				<h6 class="modal-title"><?=lang_line('dialog_title_add_picture'); ?></h6>
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			</div>
-			<?=form_open(selft_url(),'autocomplete="off"');?>
+			<?=form_open(selft_url(), 'autocomplete="off"');?>
 			<div class="modal-body">
 				<div class="row">
 					<div class="col-md-12">
 						<div class="form-group">
 							<label><?=lang_line('_title');?> <small class="text-danger">*</small></label>
-							<input type="text" name="title" value="<?=ci_date(date('Y-m-d h:i:s'),'l, d M  Y, his')?>" class="form-control" minlength="2" required/>
+							<input type="text" name="title" value="<?=ci_date(date('Y-m-d h:i:s'), 'l, d M  Y, his')?>" class="form-control" minlength="2" required/>
 						</div>
 						<div class="form-group">
 							<label><?=lang_line('_picture');?> <small class="text-danger">*</small></label>

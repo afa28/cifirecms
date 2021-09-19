@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -24,7 +24,7 @@
 	</div>
 	
 	<div class="card">
-		<?=form_open('','id="form_add"');?>
+		<?=form_open('', 'id="form_add"');?>
 		<div class="card-body">
 			<div class="form-group">
 				<label><?=lang_line('_tags');?> <span class="text-danger">*</span></label>

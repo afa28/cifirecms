@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner mg-b-90">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -20,10 +20,10 @@
 	</div>
 
 	<div class="card">
-		<?php 
-			echo form_open('','id="form_add" class="form-bordered" autocomplete="off" ');
-			echo form_hidden('act', 'add_new');
-		?>
+		<?php
+            echo form_open('', 'id="form_add" class="form-bordered" autocomplete="off" ');
+            echo form_hidden('act', 'add_new');
+        ?>
 		<div class="card-body">
 			<div class="row">
 				
@@ -58,10 +58,10 @@
 						<select name="parent" class="select2 form-control" data-placeholder="<?=lang_line('_parent');?>">
 							<option value="0" selected><?=lang_line('_no_parent');?></option>
 							<?php
-								foreach ($parents as $parent) {
-									echo '<option value="'. encrypt($parent['id']) .'">'.$parent['title'].'</option>';
-								}
-							?>
+                                foreach ($parents as $parent) {
+                                    echo '<option value="'. encrypt($parent['id']) .'">'.$parent['title'].'</option>';
+                                }
+                            ?>
 						</select>
 					</div>
 					<!--/ parent -->

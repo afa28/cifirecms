@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -56,15 +56,15 @@
 						<label><?=lang_line('_category');?> <span class="text-danger">*</span></label>
 						<select name="category" class="select2 form-control" data-placeholder="- <?=lang_line('_category');?> -">
 							<?php
-								if (is_null($result_post['category_id'])) {
-									echo '<option style="display:none;"></option>';
-								}
+                                if (is_null($result_post['category_id'])) {
+                                    echo '<option style="display:none;"></option>';
+                                }
 
-								foreach ($all_category as $category) {
-									$selected = ($category['id']==$result_post['category_id']?'selected':'');
-									echo '<option value="'. encrypt($category['id']) .'" '. $selected .'>'. $category['title'] .'</option>';
-								}
-							?>
+                                foreach ($all_category as $category) {
+                                    $selected = ($category['id']==$result_post['category_id']?'selected':'');
+                                    echo '<option value="'. encrypt($category['id']) .'" '. $selected .'>'. $category['title'] .'</option>';
+                                }
+                            ?>
 						</select>
 					</div>
 					<!--/ Category -->
@@ -79,7 +79,7 @@
 					<!-- picture -->
 					<div class="form-group">
 						<label><?=lang_line('_picture');?></label>
-						<img id="imgprv" class="img-thumbnail" src="<?=post_images($result_post['post_picture'], 'medium', TRUE);?>" style="width:100%;">
+						<img id="imgprv" class="img-thumbnail" src="<?=post_images($result_post['post_picture'], 'medium', true);?>" style="width:100%;">
 						<div class="btn-group mt-2">
 							<a id="filemanager" href="<?=content_url('plugins/filemanager/dialog.php?type=1&relative_url=1&field_id=picture&sort_by=date&descending=1&akey='.fmkey());?>" class="btn btn-xs btn-white"><i class="cificon licon-folder-plus"></i> <?=lang_line('button_browse');?></a>
 							<button type="button" id="delpict" class="btn btn-xs btn-white"><i class="cificon licon-trash-2"></i> <?=lang_line('button_delete');?></button>
@@ -100,7 +100,7 @@
 							<!-- date -->
 							<div class="form-group">
 								<label><?=lang_line('_date');?></label>
-								<input type="text" id="publishdate" name="datepost" class="form-control" aria-label="Date" aria-describedby="basic-date" value="<?=date('Y-m-d',strtotime($result_post['datepost']));?>" required />
+								<input type="text" id="publishdate" name="datepost" class="form-control" aria-label="Date" aria-describedby="basic-date" value="<?=date('Y-m-d', strtotime($result_post['datepost']));?>" required />
 							</div>
 							<!--/ date -->
 						</div>
@@ -144,16 +144,16 @@
 							<div class="form-group">
 								<label><?=lang_line('_author');?> <span class="text-danger">*</span></label>
 								<select name="author" class="select2 form-control">
-									<?php 
-										if ( group_active() == 'root' || group_active() == 'admin' ) {
-											foreach ( $all_user as $key_user ) {
-												$selected = ( $result_post['user_id']==$key_user['id'] ? 'selected' : '');		
-												echo '<option value="'. $key_user['id'] .'" '. $selected .'>'. $key_user['name'] .'</option>';
-											}
-										} else {
-											echo '<option value="'. $result_post['user_id'] .'" selected>'. $result_post['user_name'] .'</option>';
-										}
-									?>
+									<?php
+                                        if (group_active() == 'root' || group_active() == 'admin') {
+                                            foreach ($all_user as $key_user) {
+                                                $selected = ($result_post['user_id']==$key_user['id'] ? 'selected' : '');
+                                                echo '<option value="'. $key_user['id'] .'" '. $selected .'>'. $key_user['name'] .'</option>';
+                                            }
+                                        } else {
+                                            echo '<option value="'. $result_post['user_id'] .'" selected>'. $result_post['user_name'] .'</option>';
+                                        }
+                                    ?>
 								</select>
 							</div>
 							<!--/ Author -->

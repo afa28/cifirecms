@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') or exit('No direct script access allowed');?>
 	<script src="<?=content_url('plugins/bootstrap/js/bootstrap.min.js');?>"></script>
 	<script src="<?=content_url('plugins/pace/pace.min.js');?>"></script>
 	<script src="<?=content_url('plugins/feather/feather.min.js');?>"></script>

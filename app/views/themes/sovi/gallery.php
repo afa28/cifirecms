@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="col-sm-12 clearfix mb-5 left-content">
 	<div class="box-pages">
 		<div class="post-head">
@@ -7,13 +7,13 @@
 		<div class="post-inner clearfix">
 			<div class="container">
 				<div id="gallery" class="row">
-					<?php 
-						foreach ($all_gallery_image as $res):
-							$album = $this->CI->gallery_model->get_album($res['id_album']);
-					?>
+					<?php
+                        foreach ($all_gallery_image as $res):
+                            $album = $this->CI->gallery_model->get_album($res['id_album']);
+                    ?>
 						<div class="g-item col-md-3">
 							<a class="g-link" href="<?=post_images($res['picture'])?>" data-caption="<?='<strong>'.$res['title'].'</strong> <br/> <small><em>Album : '.$album['title'].'</em></small>'?>" data-width="1200" data-height="900">
-								<img src="<?=post_images($res['picture'],'medium',true)?>" itemprop="thumbnail" alt="<?=$res['title']?>" />
+								<img src="<?=post_images($res['picture'], 'medium', true)?>" itemprop="thumbnail" alt="<?=$res['title']?>" />
 							</a>
 						</div>
 					<?php endforeach ?>

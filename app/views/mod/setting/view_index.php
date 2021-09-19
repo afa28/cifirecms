@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner p-settings mg-b-70">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -125,21 +125,21 @@
 		<!-- Tab-MetaSocial -->
 		<div id="Tab-MetaSocial" class="tab-pane fadeX showX ">
 			<div class="box-body">
-				<?php 
-					echo form_open('', 'id="form-meta"');
-				?>
 				<?php
-					$filename_meta = VIEWPATH.'meta_social.php';
-					if ( file_exists("$filename_meta") ) {
-						$fh_meta = fopen($filename_meta, "r") or die("Could not open file!");
-						$data_meta = fread($fh_meta, filesize($filename_meta)) or die("Could not read file!");
-						fclose($fh_meta);
-				?>
+                    echo form_open('', 'id="form-meta"');
+                ?>
+				<?php
+                    $filename_meta = VIEWPATH.'meta_social.php';
+                    if (file_exists("$filename_meta")) {
+                        $fh_meta = fopen($filename_meta, "r") or die("Could not open file!");
+                        $data_meta = fread($fh_meta, filesize($filename_meta)) or die("Could not read file!");
+                        fclose($fh_meta); ?>
 				<style type="text/css">.CodeMirror { height:600px;font-family:consolas;}</style>
-				<textarea class="form-control content" id="code_metasocial" name="meta_content"><?=$data_meta;?></textarea>
-				<button type="button" id="submit-meta" class="btn btn-lg btn-success mt-2"><i class="fa fa-save mr-2"></i><?=lang_line('button_save_metasocial');?></button>
+				<textarea class="form-control content" id="code_metasocial" name="meta_content"><?=$data_meta; ?></textarea>
+				<button type="button" id="submit-meta" class="btn btn-lg btn-success mt-2"><i class="fa fa-save mr-2"></i><?=lang_line('button_save_metasocial'); ?></button>
 				<div class="clearfix"></div>
-				<?php } ?>
+				<?php
+                    } ?>
 				<?=form_close();?>
 			</div>
 		</div>
@@ -150,12 +150,12 @@
 		<div id="Tab-Backup" class="tab-pane">
 			<style>#Tab-Backup label{cursor: pointer;}</style>
 			<div class="box-body">
-				<?php $this->cifire_alert->show('', 'default', lang_line('_back_warning_alert'), FALSE, TRUE); ?>
+				<?php $this->cifire_alert->show('', 'default', lang_line('_back_warning_alert'), false, true); ?>
 				<div class="card">
 					<?php
-						echo form_open(admin_url($this->mod.'/backup'),'id="form_backup"');
-						echo form_hidden('act','backupSystem');
-					?>
+                        echo form_open(admin_url($this->mod.'/backup'), 'id="form_backup"');
+                        echo form_hidden('act', 'backupSystem');
+                    ?>
 					<div class="card-body">
 						<label class="tx-sans tx-10 tx-medium tx-spacing-1 tx-uppercase tx-color-03 mg-b-10"><?=lang_line('_webz');?></label>
 						<div class="row">
@@ -167,12 +167,11 @@
 						<label class="tx-sans tx-10 tx-medium tx-spacing-1 tx-uppercase tx-color-03 mg-b-15"><?=lang_line('_database');?></label>
 						<div class="row">
 							<?php
-								$tables = $this->db->list_tables();
-								foreach ($tables as $table)
-								{
-								   echo '<div class="col-sm-4 col-md-3"><input id="c_'.$table.'" type="checkbox" name="table[]" value="'.$table.'" class="c_data mr-1"> <label for="c_'.$table.'">'.$table.'</label></div>';
-								}
-							?>
+                                $tables = $this->db->list_tables();
+                                foreach ($tables as $table) {
+                                    echo '<div class="col-sm-4 col-md-3"><input id="c_'.$table.'" type="checkbox" name="table[]" value="'.$table.'" class="c_data mr-1"> <label for="c_'.$table.'">'.$table.'</label></div>';
+                                }
+                            ?>
 						</div>
 						<hr>
 						<div class="text-center">
@@ -224,9 +223,9 @@
 				<h4 class="modal-title" id="modal_title"><i class="fa fa-upload"></i></h4>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 			</div>
-			<?php 
-				echo form_open_multipart(admin_url('setting/submit'),'autocomplete="off"');
-			?>
+			<?php
+                echo form_open_multipart(admin_url('setting/submit'), 'autocomplete="off"');
+            ?>
 			<div class="modal-body">
 				<input id="data_act" type="hidden" name="pk">
 				<div class="form-group">

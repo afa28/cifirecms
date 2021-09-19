@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -20,7 +20,7 @@
 	</div>
 
 	<div class="content">
-		<?=form_open('','id="form_add" autocomplete="off"');?>
+		<?=form_open('', 'id="form_add" autocomplete="off"');?>
 		<div class="content-inner">
 			<div class="row">
 				<div class="col-md-9">
@@ -56,11 +56,11 @@
 						<label><?=lang_line('_category');?> <span class="text-danger">*</span></label>
 						<select name="category" class="select2 form-control" data-placeholder="<?=lang_line('_category');?>">
 							<?php
-								foreach ($all_category as $category) {
-										$selected = ($category['id']=='1'?'selected':'');
-									echo '<option value="'.encrypt($category['id']).'" '.$selected.'>'.$category['title'].'</option>';
-								}
-							?>
+                                foreach ($all_category as $category) {
+                                    $selected = ($category['id']=='1'?'selected':'');
+                                    echo '<option value="'.encrypt($category['id']).'" '.$selected.'>'.$category['title'].'</option>';
+                                }
+                            ?>
 						</select>
 					</div>
 					<!--/ Category -->
@@ -75,7 +75,7 @@
 					<!-- picture -->
 					<div class="form-group">
 						<label><?=lang_line('_picture');?></label>
-						<img id="imgprv" class="img-thumbnail" src="<?=post_images('', '', TRUE);?>" style="width:100%;">
+						<img id="imgprv" class="img-thumbnail" src="<?=post_images('', '', true);?>" style="width:100%;">
 						<div class="btn-group mt-2">
 							<a id="filemanager" href="<?=content_url('plugins/filemanager/dialog.php?type=1&relative_url=1&field_id=picture&sort_by=date&descending=1&akey='.fmkey());?>" class="btn btn-xs btn-white"><i class="cificon licon-folder-plus"></i> <?=lang_line('button_browse');?></a>
 							<button type="button" id="delpict" class="btn btn-xs btn-white"><i class="cificon licon-trash-2"></i> <?=lang_line('button_delete');?></button>

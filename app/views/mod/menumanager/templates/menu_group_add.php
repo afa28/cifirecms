@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') or exit('No direct script access allowed');?>
 <h2>Add Menu Group</h2>
 <p>
 	<label for="menu-group-title">Title</label>

@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -20,10 +20,10 @@
 	</div>
 
 	<div class="card">
-		<?php 
-			echo form_open('','id="form_group" autocomplete="off"');
-			echo form_hidden('act','add-group');
-		?>
+		<?php
+            echo form_open('', 'id="form_group" autocomplete="off"');
+            echo form_hidden('act', 'add-group');
+        ?>
 		<div class="card-body">
 			<div class="form-group">
 				<label><?=lang_line('_title');?> <span class="text-danger">*</span></label>

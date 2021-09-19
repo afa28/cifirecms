@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="col-sm-12 clearfix mb-5 left-content">
 	
 	<?=$this->cifire_alert->show('contact');?>
@@ -32,7 +32,7 @@
 					</div>
 				</div>
 				<div class="col-md-8">
-					<?=form_open('','class="form-contact"');?>
+					<?=form_open('', 'class="form-contact"');?>
 					<div class="row">
 						<div class="col-md-8">
 							<div class="form-group">

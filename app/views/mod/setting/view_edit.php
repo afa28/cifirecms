@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -25,9 +25,9 @@
 
 	<div class="card">
 		<?php
-			echo form_open(admin_url($this->mod.'/edit/?id='.urlencode(encrypt($result['id']))),'id="form_edit"');
-			echo form_hidden('pk', encrypt($result['id']));
-		?>
+            echo form_open(admin_url($this->mod.'/edit/?id='.urlencode(encrypt($result['id']))), 'id="form_edit"');
+            echo form_hidden('pk', encrypt($result['id']));
+        ?>
 		<div class="card-body">
 			<div class="row">
 				<!-- groups -->

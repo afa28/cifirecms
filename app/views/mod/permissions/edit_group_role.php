@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -23,11 +23,11 @@
 		<div class="card-header">
 			<span class="tx-medium pull-left"><span class="btn btn-xs rounded-pill btn-white mr-2"><i class="cificon licon-key"></i></span><?=$res_group['title'];?></span>
 		</div>
-		<?php 
-			echo form_open('','id="form_group" autocomplete="off"');
-			echo form_hidden('act','edit-group-role');
-			echo form_hidden('pk',encrypt($res_group['pk']));
-		?>
+		<?php
+            echo form_open('', 'id="form_group" autocomplete="off"');
+            echo form_hidden('act', 'edit-group-role');
+            echo form_hidden('pk', encrypt($res_group['pk']));
+        ?>
 		<div class="card-body">
 			<div class="row">
 				<!-- Group -->

@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') or exit('No direct script access allowed');?>
 <div class="page-inner">
 	<div class="mb-4 mt-4">
 		<?= $this->cifire_alert->show('ENV'); ?>
@@ -113,10 +113,10 @@
 						<?php foreach ($this->CI->Model->popular_post('', $limit = '5') as $popular): ?>
 						<div class="d-sm-flex pd-20">
 							<a href="<?=post_url($popular['post_seotitle']);?>" class="wd-100 wd-md-50 wd-lg-100 ht-60 ht-md-40 ht-lg-60" target="_blank">
-								<img src="<?=post_images($popular['post_picture'],'medium',TRUE);?>" class="img-fit-cover">
+								<img src="<?=post_images($popular['post_picture'], 'medium', true);?>" class="img-fit-cover">
 							</a>
 							<div class="media-body mg-t-20 mg-sm-t-0 mg-sm-l-20">
-								<p class="tx-color-03 tx-12 mg-b-0"><?=ci_date($popular['post_datepost'],'l, d F Y');?></p>
+								<p class="tx-color-03 tx-12 mg-b-0"><?=ci_date($popular['post_datepost'], 'l, d F Y');?></p>
 								<h6 class="tx-14"><a href="<?=post_url($popular['post_seotitle']);?>" class="link-01" target="_blank"><?=$popular['post_title'];?></a></h6>
 							</div>
 						</div>
@@ -188,11 +188,11 @@
 			series: [
 				{
 					name: "<?=lang_line('hits');?>",
-					data: [<?php echo implode(",",array_reverse($rhits));?>]
+					data: [<?php echo implode(",", array_reverse($rhits));?>]
 				},
 				{
 					name: "<?=lang_line('visitors');?>",
-					data: [<?php echo implode(",",array_reverse($rvisitors));?>]
+					data: [<?php echo implode(",", array_reverse($rvisitors));?>]
 				}
 			],
 			grid: {
@@ -206,7 +206,7 @@
 				size: 4
 			},
 			xaxis: {
-				categories: [<?php echo implode(",",$arrhari);?>]
+				categories: [<?php echo implode(",", $arrhari);?>]
 			},
 			yaxis: {
 				title: {

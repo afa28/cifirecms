@@ -1,6 +1,6 @@
-<?php 
-	defined('BASEPATH') OR exit('No direct script access allowed'); 
-	$get_group_id = (!empty($this->input->get('group_id')) ? $this->input->get('group_id') : 1);
+<?php
+    defined('BASEPATH') or exit('No direct script access allowed');
+    $get_group_id = (!empty($this->input->get('group_id')) ? $this->input->get('group_id') : 1);
 ?>
 <script type="text/javascript">
 	var current_group_id = <?=$get_group_id;?>;
@@ -31,13 +31,14 @@
 							<ul id="menu-group">
 								<li id="add-group"><a href="#" title="Add menu group" data-toggle="tooltip" data-placement="top" data-title="Edit">+</a></li>
 								<?php
-									$menugroup = $this->db->get('t_menu_group')->result_array();
-									foreach ($menugroup as $mgr) {
-								?>
-								<li id="group-<?=$mgr['id'];?>">
-									<a href="<?=admin_url('menumanager/?group_id='.$mgr['id']);?>"><?=$mgr['title'];?></a>
+                                    $menugroup = $this->db->get('t_menu_group')->result_array();
+                                    foreach ($menugroup as $mgr) {
+                                        ?>
+								<li id="group-<?=$mgr['id']; ?>">
+									<a href="<?=admin_url('menumanager/?group_id='.$mgr['id']); ?>"><?=$mgr['title']; ?></a>
 								</li>
-								<?php } ?>
+								<?php
+                                    } ?>
 							</ul>
 						</div>
 						<div class="clearfix"></div>
@@ -112,20 +113,20 @@
 									<div class="box">
 										<h2>Menu Group</h2>
 										<section>
-											<?php 
-												$g_title = '';
-												if ( ! empty($this->input->get('group_id')) ) {
-													$g_title = $this->db
-														->where('id', $this->input->get('group_id'))
-														->get('t_menu_group')
-														->row_array();
-												} else {
-													$g_title = $this->db
-														->order_by('id','ASC')
-														->get('t_menu_group')
-														->row_array();
-												}
-											?>
+											<?php
+                                                $g_title = '';
+                                                if (! empty($this->input->get('group_id'))) {
+                                                    $g_title = $this->db
+                                                        ->where('id', $this->input->get('group_id'))
+                                                        ->get('t_menu_group')
+                                                        ->row_array();
+                                                } else {
+                                                    $g_title = $this->db
+                                                        ->order_by('id', 'ASC')
+                                                        ->get('t_menu_group')
+                                                        ->row_array();
+                                                }
+                                            ?>
 											<span id="edit-group-input"><b><?=$g_title['title'];?></b> </span>
 											<span class="label label-warning"><small>ID: <?=$get_group_id;?></small></span>
 											<div style="margin-top:5px;">

@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -88,7 +88,7 @@
 			<!-- form search -->
 			<div class="top-search-warper">
 				<div class="container">
-					<?=form_open(site_url('search'),'class="search-form"');?>
+					<?=form_open(site_url('search'), 'class="search-form"');?>
 					<input type="text" name="kata" class="input-search" placeholder="Search..."/>
 					<?=form_close();?>
 				</div>
@@ -102,16 +102,16 @@
 						<span class="fa fa-navicon"></span>
 					</button>
 					<div id="topMenu" class="collapse navbar-collapse">
-						<?php 
-							// Load web menu.
-							$this->CI->load_menu(
-												  $menu_group = 2, 
-												  $ul = 'class="navbar-nav"', 
-												  $ul_li = 'class="nav-item dropdown"', 
-												  $ul_li_a ='class="nav-link"', 
-												  $ul_li_a_ul = 'class="dropdown-menu"'
-												)
-						?>
+						<?php
+                            // Load web menu.
+                            $this->CI->load_menu(
+                                $menu_group = 2,
+                                $ul = 'class="navbar-nav"',
+                                $ul_li = 'class="nav-item dropdown"',
+                                $ul_li_a ='class="nav-link"',
+                                $ul_li_a_ul = 'class="dropdown-menu"'
+                            )
+                        ?>
 					</div>
 					<div class="top-seach-link">
 						<a href="javascript:void(0)" class="search-toggle"><i class="fa fa-search"></i></a>

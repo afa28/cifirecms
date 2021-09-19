@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner mg-b-50">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -28,17 +28,17 @@
 				<div class="col-md-9 align-self-center detailpost">
 					<div class="mt-2">
 						<?php
-							$tags = explode(',', $res['tag']);
-							if ( ! empty($res['tag']) && $tags > 0) {
-								foreach ($tags as $tag) {
-									$tag = seotitle($tag, NULL);
-									$resTag = $this->CI->db->where('seotitle', $tag)->get('t_tag')->row_array();
-									if ( $tag == $resTag['seotitle'] ) {
-										echo '<span class="posttag text-primary">#'.$resTag['title'].'</span>';
-									}
-								}
-							}
-						?>
+                            $tags = explode(',', $res['tag']);
+                            if (! empty($res['tag']) && $tags > 0) {
+                                foreach ($tags as $tag) {
+                                    $tag = seotitle($tag, null);
+                                    $resTag = $this->CI->db->where('seotitle', $tag)->get('t_tag')->row_array();
+                                    if ($tag == $resTag['seotitle']) {
+                                        echo '<span class="posttag text-primary">#'.$resTag['title'].'</span>';
+                                    }
+                                }
+                            }
+                        ?>
 					</div>
 
 					<h4 class="title"><?=$res['post_title'];?></h4>
@@ -49,7 +49,7 @@
 								<span><i class="cificon licon-user"></i> <?=$res['user_name'];?></span>
 								<span class="mr-1 ml-1">/</span>
 								<span  class="mr-1"><i class="cificon licon-calendar"></i> <?=ci_date($res['datepost'], 'l, d F Y');?></span>
-								<i class="cificon licon-clock"></i> <?=ltrim(ci_date($res['timepost'], 'h:i A'),'0');?>
+								<i class="cificon licon-clock"></i> <?=ltrim(ci_date($res['timepost'], 'h:i A'), '0');?>
 								<span class="mr-1 ml-1">/</span>
 								<span><i class="cificon licon-folder-plus"></i> <?=$res['category_title'];?></span>
 								<span class="mr-1 ml-1">/</span>

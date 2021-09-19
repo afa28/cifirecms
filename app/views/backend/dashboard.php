@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -89,13 +89,13 @@
 			<!-- Sidebar Menu Start -->
 			<div class="page-sidebar-inner">
 				<div class="page-sidebar-menu">
-					<?php 
-						// $menu_groups = dashboard_menu_active(login_level('admin', true));
-						echo $this->CI->cifire_menu->dashboard_menu(
-							$group_id = 1, 
-							$ul_attr  = 'id="main-menu" class="accordion-menu"'
-						);
-					?>
+					<?php
+                        // $menu_groups = dashboard_menu_active(login_level('admin', true));
+                        echo $this->CI->cifire_menu->dashboard_menu(
+                            $group_id = 1,
+                            $ul_attr  = 'id="main-menu" class="accordion-menu"'
+                        );
+                    ?>
 				</div>
 			</div>
 			<!--/ Sidebar Menu End -->
@@ -234,7 +234,7 @@
 	<script src="<?=content_url('plugins/x-editable/x-editable.js');?>"></script>
 
 	<!-- codemirror -->
-	<?php if ( $this->mod == 'theme' || $this->mod == 'setting'): ?>
+	<?php if ($this->mod == 'theme' || $this->mod == 'setting'): ?>
 	<script src="<?=content_url('plugins/codemirror/lib/codemirror.js');?>"></script>
 	<script src="<?=content_url('plugins/codemirror/addon/fold/xml-fold.js');?>"></script>
 	<script src="<?=content_url('plugins/codemirror/addon/edit/matchtags.js');?>"></script>
@@ -283,9 +283,9 @@
 
 	<!-- Include mod script.php -->
 	<?php
-		if (file_exists(VIEWPATH . 'mod/'.$this->mod.'/script.php')) {
-			require_once(VIEWPATH . 'mod/'.$this->mod.'/script.php');
-		}
-	?>
+        if (file_exists(VIEWPATH . 'mod/'.$this->mod.'/script.php')) {
+            require_once(VIEWPATH . 'mod/'.$this->mod.'/script.php');
+        }
+    ?>
 </body>
 </html>

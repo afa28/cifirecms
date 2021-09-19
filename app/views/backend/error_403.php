@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner">
 	<div class="col-lg-5 col-md-5 col-sm-6" style="margin:auto;">
 		<img src="<?=content_url('images/pcdown.png');?>" class="mg-t-50" style="width:100%;">

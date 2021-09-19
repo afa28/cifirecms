@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 
 <!-- left content -->
 <div class="col-lg-8 col-md-12 clearfix mb-5 left-content">
@@ -7,14 +7,14 @@
 	<div id="headlines" class="carousel slide headlines mb-4" data-ride="carousel">
 		<div class="carousel-inner">
 			<?php
-				$i = 0;
-				$headlines = $this->CI->index_model->get_headline();
-				foreach ($headlines as $res_headline):
-					$i++;
-					$active = ($i == 1 ? 'active' : '');
-			?>
+                $i = 0;
+                $headlines = $this->CI->index_model->get_headline();
+                foreach ($headlines as $res_headline):
+                    $i++;
+                    $active = ($i == 1 ? 'active' : '');
+            ?>
 			<div class="carousel-item <?=$active;?>">
-				<a href="<?=post_url($res_headline['post_seotitle']);?>" class="img-href"><img src="<?=post_images($res_headline['picture'],'medium',TRUE)?>" class="d-block w-100" alt="<?=$res_headline['post_title']?>"></a>
+				<a href="<?=post_url($res_headline['post_seotitle']);?>" class="img-href"><img src="<?=post_images($res_headline['picture'], 'medium', true)?>" class="d-block w-100" alt="<?=$res_headline['post_title']?>"></a>
 				
 				<div class="carousel-caption d-md-block">
 					<div class="tagcloud">
@@ -36,8 +36,8 @@
 	<!--/ headline -->
 
 	<?php
-		$homePost1 = $this->CI->index_model->get_category_by('id', 2, 'row');
-	?>
+        $homePost1 = $this->CI->index_model->get_category_by('id', 2, 'row');
+    ?>
 	<div class="box-content-1 mb-2">
 		<div class="post-head">
 			<h4><i class="cificon licon-bookmark text-muted mr-1"></i> <?=$homePost1['title'];?></h4>
@@ -45,12 +45,12 @@
 		<div class="post-inner clearfix">
 			<div class="row">
 				<?php
-					$res_post1a = $this->CI->index_model->get_post_lmit_by_category($homePost1['id'], [1])->row_array();
-				?>
+                    $res_post1a = $this->CI->index_model->get_post_lmit_by_category($homePost1['id'], [1])->row_array();
+                ?>
 				<div class="col-md-6 box-left">
 					<div class="image-warper">
 						<a href="<?=post_url($res_post1a['post_seotitle'])?>" title="<?=$res_post1a['post_title'];?>">
-							<img class="image_fade" alt="<?=$res_post1a['post_title'];?>" src="<?=post_images($res_post1a['picture'], 'medium', TRUE);?>">
+							<img class="image_fade" alt="<?=$res_post1a['post_title'];?>" src="<?=post_images($res_post1a['picture'], 'medium', true);?>">
 						</a>
 					</div>
 					<div class="post-info-1">
@@ -70,14 +70,14 @@
 				</div>
 				<div class="col-md-6 box-right">
 					<?php
-						$post1b = $this->CI->index_model->get_post_lmit_by_category($homePost1['id'], [4,1]);
-						foreach ($post1b->result_array() as $res_post1b):
-					?>
+                        $post1b = $this->CI->index_model->get_post_lmit_by_category($homePost1['id'], [4,1]);
+                        foreach ($post1b->result_array() as $res_post1b):
+                    ?>
 					<div class="post-lists">
 						<div class="media">
 							<div class="image-warper">
 								<a href="<?=post_url($res_post1b['post_seotitle']);?>" title="<?=$res_post1b['post_title'];?>">
-									<img alt="<?=$res_post1b['post_title'];?>" src="<?=post_images($res_post1b['picture'], 'thumb', TRUE);?>">
+									<img alt="<?=$res_post1b['post_title'];?>" src="<?=post_images($res_post1b['picture'], 'thumb', true);?>">
 								</a>
 							</div>
 							<div class="media-body post-info-2">
@@ -102,8 +102,8 @@
 	<div class="box-content-2">
 		<div class="row">
 			<?php
-				$homePost2 = $this->CI->index_model->get_category_by('id', 3, 'row');
-			?>
+                $homePost2 = $this->CI->index_model->get_category_by('id', 3, 'row');
+            ?>
 			<div class="col-md-6">
 				<div class="post-head mt-2">
 					<h4>
@@ -113,12 +113,12 @@
 				<div class="post-inner clearfix">
 					<div class="mb-3">
 						<?php
-							$res_post2a = $this->CI->index_model->get_post_lmit_by_category($homePost2['id'], [1])->row_array();
-						?>
+                            $res_post2a = $this->CI->index_model->get_post_lmit_by_category($homePost2['id'], [1])->row_array();
+                        ?>
 						<div class="box-left">
 							<div class="image-warper">
 								<a href="<?=post_url($res_post2a['post_seotitle'])?>" title="<?=$res_post2a['post_title'];?>">
-									<img class="image_fade" alt="<?=$res_post2a['post_title'];?>" src="<?=post_images($res_post2a['picture'], 'medium', TRUE);?>">
+									<img class="image_fade" alt="<?=$res_post2a['post_title'];?>" src="<?=post_images($res_post2a['picture'], 'medium', true);?>">
 								</a>
 							</div>
 							<div class="post-info-1">
@@ -137,9 +137,9 @@
 
 					<div class="row">
 						<?php
-							$post2b = $this->CI->index_model->get_post_lmit_by_category($homePost2['id'], [2,1]);
-							foreach ($post2b->result_array() as $res_post2b):
-						?>
+                            $post2b = $this->CI->index_model->get_post_lmit_by_category($homePost2['id'], [2,1]);
+                            foreach ($post2b->result_array() as $res_post2b):
+                        ?>
 						<div class="post-lists">
 							<div class="col-sm-12">
 								<div class="media">
@@ -161,8 +161,8 @@
 			</div>
 
 			<?php
-				$homePost3 = $this->CI->index_model->get_category_by('id', 4, 'row');
-			?>
+                $homePost3 = $this->CI->index_model->get_category_by('id', 4, 'row');
+            ?>
 			<div class="col-md-6">
 				<div class="post-head mt-2">
 					<h4>
@@ -172,12 +172,12 @@
 				<div class="post-inner clearfix">
 					<div class="mb-3">
 						<?php
-							$res_post3a = $this->CI->index_model->get_post_lmit_by_category($homePost3['id'], [1])->row_array();
-						?>
+                            $res_post3a = $this->CI->index_model->get_post_lmit_by_category($homePost3['id'], [1])->row_array();
+                        ?>
 						<div class="box-left">
 							<div class="image-warper">
 								<a href="<?=post_url($res_post3a['post_seotitle'])?>" title="<?=$res_post3a['post_title'];?>">
-									<img class="image_fade" alt="<?=$res_post3a['post_title'];?>" src="<?=post_images($res_post3a['picture'], 'medium', TRUE);?>">
+									<img class="image_fade" alt="<?=$res_post3a['post_title'];?>" src="<?=post_images($res_post3a['picture'], 'medium', true);?>">
 								</a>
 							</div>
 							<div class="post-info-1">
@@ -194,9 +194,9 @@
 					
 					<div class="row">
 						<?php
-							$post3b = $this->CI->index_model->get_post_lmit_by_category($homePost3['id'], [2,1]);
-							foreach ($post3b->result_array() as $res_post3b):
-						?>
+                            $post3b = $this->CI->index_model->get_post_lmit_by_category($homePost3['id'], [2,1]);
+                            foreach ($post3b->result_array() as $res_post3b):
+                        ?>
 						<div class="post-lists">
 							<div class="col-sm-12">
 								<div class="media">

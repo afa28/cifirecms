@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="page-inner">
 	<div class="d-sm-flex align-items-center justify-content-between pd-b-20">
 		<div class="pageheader pd-t-20 pd-b-0">
@@ -20,10 +20,10 @@
 	</div>
 
 	<div class="card">
-		<?php 
-			echo form_open('','id="form_group" autocomplete="off"');
-			echo form_hidden('act','add-role');
-		?>
+		<?php
+            echo form_open('', 'id="form_group" autocomplete="off"');
+            echo form_hidden('act', 'add-role');
+        ?>
 		<div class="card-body">
 			<div class="row">
 				<!-- Group -->
@@ -32,10 +32,12 @@
 						<label><?=lang_line('_group');?> <span class="text-danger">*</span></label>
 						<select name="group" class="select2">
 							<?php
-								$groups = $this->CI->db->get('t_user_group')->result_array();
-								foreach ($groups as $res):
-									if ($res['group']=='root') continue;
-							?>
+                                $groups = $this->CI->db->get('t_user_group')->result_array();
+                                foreach ($groups as $res):
+                                    if ($res['group']=='root') {
+                                        continue;
+                                    }
+                            ?>
 							<option value="<?=$res['group'];?>"><?=$res['title'];?></option>
 							<?php endforeach; ?>
 						</select>
@@ -49,9 +51,9 @@
 						<label><?=lang_line('_module');?> <span class="text-danger">*</span></label>
 						<select name="module" class="select2">
 							<?php
-								$module = $this->CI->db->get('t_mod')->result_array();
-								foreach ($module as $res):
-							?>
+                                $module = $this->CI->db->get('t_mod')->result_array();
+                                foreach ($module as $res):
+                            ?>
 							<option value="<?=$res['mod'];?>"><?=$res['mod'];?></option>
 							<?php endforeach; ?>
 						</select>
