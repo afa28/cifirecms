@@ -160,7 +160,11 @@ class Post extends Web_controller {
 
 		if ( $data == FALSE )
 		{
-			return NULL;
+			$result = array(
+				'title' => '', 
+				'url'   => '#'
+			);
+			return $result;
 		}
 
 		else
@@ -181,7 +185,11 @@ class Post extends Web_controller {
 		
 		if ( $data == FALSE )
 		{
-			return NULL;
+			$result = array(
+				'title' => '', 
+				'url'   => '#'
+			);
+			return $result;
 		}
 		else
 		{	

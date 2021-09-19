@@ -296,7 +296,10 @@ class Cifire_Menu {
 
 			$html = "\n$indent";
 
-			$submenu_title = $this->CI->db->where('id', $parent)->get('t_menu')->row_array()['title'];
+			$submenu_title = $this->CI->db->where('id', $parent)->get('t_menu')->row_array();
+			$submenu_title = $submenu_title==NULL?"":$submenu_title['title'];
+
+
 			$html .= '<ul '.$attr.'>';
 
 			$i++;

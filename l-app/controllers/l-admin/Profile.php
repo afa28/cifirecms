@@ -52,7 +52,7 @@ class Profile extends Backend_Controller {
 		{
 			if ($this->role->i('modify'))
 			{
-				$id = login_key('admin');
+				$id = decrypt(login_key('admin'));
 
 				$rules = array(
 					array(
@@ -63,7 +63,7 @@ class Profile extends Backend_Controller {
 					array(
 						'field' => 'email',
 						'label' => lang_line('_email'),
-						'rules' => 'required|trim|min_length[4]|max_length[80]|valid_email',
+						'rules' => 'required|trim|min_length[4]|max_length[80]|valid_email|callback__cek_email['.$id.']',
 					),
 					array(
 						'field' => 'input_password',
@@ -111,11 +111,11 @@ class Profile extends Backend_Controller {
 						->select('email')
 						->where('id',$id)
 						->get('t_user')
-						->row_array()['email'];
+						->row_array();
 
 					if ( 
 					      $countMail == 1 &&
-					      $currentMail == $editMail || 
+					      $currentMail == $editMail['email'] || 
 					      $countMail != 1
 					    )
 					{
@@ -207,4 +207,23 @@ class Profile extends Backend_Controller {
 		}
 
 	}
+
+
+	public function _cek_email($email,$id) 
+	{
+		$cek = $this->profile_model->cek_email($id, $email);
+
+		if ($cek == FALSE) 
+		{
+			$this->form_validation->set_message('_cek_email', lang_line('form_validation_already_exists'));
+			return FALSE;
+		}
+		else 
+		{
+			return TRUE;
+		}
+	}
+
+
+
 } // End Calss
